@@ -72,6 +72,22 @@ add_theme_support( 'post-thumbnails' );
 
 // add_image_size( 'medium-wide', 666, 238 ); //666x238
 
-add_action( 'init', 'register_my_menus' );
 
-register_nav_menu( 'primary', 'Main Nav' );
+
+// Register a single menu
+//function register_my_menu() {
+//  register_nav_menu( 'primary', 'Main Nav' );  
+//}
+//add_action( 'init', 'register_my_menu' );
+
+
+
+// Register multiple menus
+function register_my_menus(){
+  register_nav_menus(array( 
+    'primary' => 'Main Nav',
+    'footer' => 'Footer Nav'
+    )
+  );
+}
+add_action( 'init', 'register_my_menus' );
