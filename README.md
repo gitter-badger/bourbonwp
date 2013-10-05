@@ -1,4 +1,4 @@
-BoilerstrapWP
-===========
+BourbonWP
+=========
 
-A naked opinionated wordpress theme integrated with HTML5 boilerplate and Twitter Bootstrap
+A naked Wordpress theme with the convenience of having Bourbon and Neat already builtin.
