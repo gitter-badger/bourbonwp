@@ -7,16 +7,11 @@ A naked Wordpress theme with the convenience of having Bourbon and Neat already 
 This is a naked Wordpress theme that you can use to create your own theme.
 The markup is based Twentythirteen Theme
 I'm sure you can get something fancier, based on the latest Twenty-something Wordpress theme, but I like this one as it's plain an simple.
-The naming convention is taken straight from Bootstrap2 because I like it.
+
 The css is generated using Sass (hence, you need Ruby on your machine) and the awesome [Bourbon](http://bourbon.io) and [Neat](http://neat.bourbon.io) libraries.
+The latest update to the styles folder has been done on the 6th of September 2013.
 
-The latest update to the styles folder has been done on the 23rd of September 2013.
-
-Instead of using only DIVs for content layout, it uses HTML5 tags, including [header](http://html5doctor.com/the-header-element/), 
-[footer](http://www.w3schools.com/html5/tag_footer.asp), 
-[nav](http://www.w3schools.com/html5/tag_nav.asp), 
-[article](http://www.w3schools.com/html5/tag_article.asp), 
-and [section](http://html5doctor.com/the-section-element/).
+This theme includes Modernizr, Respond, jQuery and a conditional call (for old IE browsers) to Selectivizr.
 
 In functions.php I have registered a custom menu, activated post thumbnails, registered the sidebar.
 
@@ -31,7 +26,7 @@ Getting Started
 5. Add some of the "Root Files" to the root directory of your website (explained below).
 6. Style away.
 
-Note: As a default I have created _vars.scss, containing variables, _helpers.scss, where you can add helpful classes, and _layout.scss, where the bulk of your code has to go.
+Note: As a default I have created _vars.scss, containing variables, _helpers.scss, where you can add helpful classes, _reset.scss for your resets, _grid_settings.scss for Neat customization and _layout.scss, where the bulk of your code has to go.
 If you like, you can create as many partials as you wish of course - many people like to divide their scss files in tiny bits, each referring to different modules. Your choice!
 
 Root Files
@@ -57,6 +52,6 @@ License
 The Unlicense (aka: public domain) http://unlicense.org
 
 
-Made by
+Put together by
 -------
 Alessandro Muraro - [alexmuraro.me](http://www.alexmuraro.me)
