@@ -73,12 +73,13 @@ add_theme_support( 'post-thumbnails' );
 // add_image_size( 'medium-wide', 666, 238 ); //666x238
 
 
+// Deregister jQuery and use the version you need
 
-// Register a single menu
-//function register_my_menu() {
-//  register_nav_menu( 'primary', 'Main Nav' );  
-//}
-//add_action( 'init', 'register_my_menu' );
+wp_deregister_script('jquery');
+if(!is_admin()) { 
+     wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js');
+     wp_enqueue_script('jquery');
+}
 
 
 

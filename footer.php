@@ -5,7 +5,7 @@
  */
 ?>
 
-    <footer>
+    <footer class="row">
         <p>
             <?php bloginfo('name'); ?> is proudly powered by
             <a href="http://wordpress.org/">WordPress</a>, and built using the <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>.
@@ -20,8 +20,6 @@
 <!-- Javascript at the bottom for fast page loading -->
 
 <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-<?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/vendor/jquery-1.9.1.min.js") ?>
-<?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/vendor/bootstrap.min.js") ?>
 <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/plugins.js") ?>
 <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/main.js") ?>
    

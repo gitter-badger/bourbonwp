@@ -1,0 +1,15 @@
+// Some styles to get you started.
+
+@for $i from 1 to 12 { // This one generates a loop outputting .span1, .span2, etc 
+  .span#{$i} { 
+	@include span-columns($i);
+  }
+}
+
+.wrapper {
+	@include outer-container;
+	padding: 2em;
+	@include media($large) {
+		max-width: em(1280);
+	}
+}

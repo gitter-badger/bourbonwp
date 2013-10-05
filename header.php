@@ -25,12 +25,11 @@
     <!-- Wordpress Templates require a style.css in theme root directory -->
     <?php versioned_stylesheet($GLOBALS["TEMPLATE_RELATIVE_URL"]."styles/styles.css") ?>
     
-    <?php wp_enqueue_script("jquery"); ?>
-    
-    <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects and selectivizr which needs to be loaded before content -->
-    <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/vendor/modernizr-2.6.2-respond-1.1.0.min.js") ?>
-    
+    <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects, jquery and selectivizr for IE improvements -->
+    <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/vendor/modernizr-respond-jquery.min.js") ?>
+    <!--[if (gte IE 6)&(lte IE 8)]>
     <script type="text/JavaScript" src="http://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <![endif]-->
 
     <!-- Wordpress Head Items -->
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -43,14 +42,17 @@
     <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
   <![endif]-->
 
-    <div class="container">
-        <header role="banner">
-            <h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-            <p class="description"><?php bloginfo('description'); ?></p>
-        </header>
-        <div class="navbar">
-        <div class="navbar-inner">
-            <!-- Just create a custom menu and activate it. It will end up here, with  proper Twitter Bootstrap classes -->
-            <?php wp_nav_menu( array('theme_location' => 'primary', 'menu_class' => 'nav', 'container' => false )); ?>
+    <div class="wrapper">
+        <div class="row">
+            <header class="span12">
+                <h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+                <p class="description"><?php bloginfo('description'); ?></p>
+            </header>
         </div>
-    </div>
+        <div class="row">
+            <div class="navbar span12">
+                <div class="navbar-inner">
+                    <?php wp_nav_menu( array('theme_location' => 'primary', 'menu_class' => 'nav', 'container' => false )); ?>
+                </div>
+            </div>
+        </div>

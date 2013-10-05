@@ -1,11 +1,8 @@
 BourbonWP
 ===============================
 
-A naked Wordpress theme with the convenience of having Bourbon and Neat already builtin.
--------------------------------
-
 This is a naked Wordpress theme that you can use to create your own theme.
-The markup is based Twentythirteen Theme
+The markup is based on Bruce Lawson's [Designing a Blog with HTML5](http://html5doctor.com/designing-a-blog-with-html5/)
 I'm sure you can get something fancier, based on the latest Twenty-something Wordpress theme, but I like this one as it's plain an simple.
 The naming convention is taken straight from Bootstrap2 because I like it.
 The css is generated using Sass (hence, you need Ruby on your machine) and the awesome [Bourbon](http://bourbon.io) and [Neat](http://neat.bourbon.io) libraries.

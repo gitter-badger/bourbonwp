@@ -1,31 +1,22 @@
 
 /* ===============
-By default we are using the html5 boilerplate css. (http://html5boilerplate.com/)
-If you prefer Twitter Bootstrap (http://twitter.github.com/bootstrap/) as your starting point, comment line 9 and uncomment lines 10, 11, 12.
-_bootstrap-responsive contains the responsive styles.
-_bootstrap.scss contains Twitter Bootstrap's files.
-_layout.css is used for your css.
-If you use _html5b.scss, _layout.scss is already referenced in there, at line 624, so you don't need to do anything beside adding your styles in layout.scss.
+We user Bourbon and Neat (for grids) to make it simple.
+Bourbon: http://bourbon.io
+Neat: http://neat.bourbon.io and examples http://neat.bourbon.io/examples/
 ==================*/
 
-// Use the following mixin to use the IEbox model
-// Usage: @include iebox - within your classes
+// Warning: We are using the IE Box Style
 
-@mixin iebox {
-	-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-@import "html5b";
-
-// @import "bootstrap";
-// @import "bootstrap-responsive";
-// @import "layout"; 
-
+@import "bourbon/bourbon"; // bourbon files
+@import "grid_settings";  // some basic settings for the grid
+@import "neat/neat"; // neat files
+@import "reset"; // your custom resets
+@import "vars"; // your variables
+@import "structure"; // Put blocks and structure here
+@import "layout"; // The main styling
+@import "helpers"; // generic helper classes
 
 /* WordPress Required Styles */
-
 
 .aligncenter {
 	display: block;
@@ -74,16 +65,3 @@ If you use _html5b.scss, _layout.scss is already referenced in there, at line 62
 .sticky h2 {
 	padding-top: 10px;
 }
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
