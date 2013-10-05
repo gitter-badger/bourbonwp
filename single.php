@@ -2,7 +2,7 @@
 
 /**
  * @package WordPress
- * @subpackage BoilerstrapWP
+ * @subpackage BourbonWP
  */
 
 get_header(); ?>

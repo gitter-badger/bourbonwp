@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage BoilerstrapWP
+ * @subpackage BourbonWP
  */
 /*
 Template Name: Archives

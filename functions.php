@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage BoilerstrapWP
+ * @subpackage BourbonWP
  */
 
 // Custom HTML5 Comment Markup
