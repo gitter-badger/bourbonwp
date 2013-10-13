@@ -11,6 +11,12 @@ var standalone = window.navigator.standalone,
     vScrollPosition = $(document).scrollTop(), //retrieve the document scroll ToP position
     hScrollPosition = $(document).scrollLeft();//retrieve the document scroll Left position
 
+// Used to open a link when clicking on a div containing a link - http://css-tricks.com/snippets/jquery/make-entire-div-clickable/
+$(".clickable-box").click(function(){
+     window.location=$(this).find("a").attr("href"); 
+     return false;
+});
+
 $(document).ready(function() {
 	// your scripts go here
 });
