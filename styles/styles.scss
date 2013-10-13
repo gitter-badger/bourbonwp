@@ -8,9 +8,9 @@ Neat: http://neat.bourbon.io and examples http://neat.bourbon.io/examples/
 // Warning: We are using the IE Box Style
 
 @import "reset"; // Default reset file
-@import "bourbon/bourbon"; // bourbon files
+@import "bourbon/bourbon"; // bourbon files - don't touch
 @import "grid_settings";  // some basic settings for the grid
-@import "neat/neat"; // neat files
+@import "neat/neat"; // neat files - don't touch
 @import "customreset"; // your custom resets
 @import "vars"; // your variables
 @import "structure"; // Put blocks and structure here
