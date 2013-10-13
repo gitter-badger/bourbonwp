@@ -1,3 +1,5 @@
+// Some useful variables
+
 var standalone = window.navigator.standalone,
     userAgent = window.navigator.userAgent.toLowerCase(),
     safari = /safari/.test( userAgent ),
