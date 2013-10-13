@@ -5,21 +5,22 @@
  */
 ?>
 
-    <footer class="row">
+     <footer class="row">
         <p>
             <?php bloginfo('name'); ?> is proudly powered by
             <a href="http://wordpress.org/">WordPress</a>.
             <br />
             <a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a>
             and <a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a>.
-            <!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
+            <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. ì
         </p>
     </footer>
-</div> <!--! end of #container -->
+
+
+<!--! end of #container -->
 
 <!-- Javascript at the bottom for fast page loading -->
 
-<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
 <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/plugins.js") ?>
 <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/main.js") ?>
    

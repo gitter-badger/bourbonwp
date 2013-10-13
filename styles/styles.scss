@@ -7,13 +7,14 @@ Neat: http://neat.bourbon.io and examples http://neat.bourbon.io/examples/
 
 // Warning: We are using the IE Box Style
 
+@import "reset"; // Default reset file
 @import "bourbon/bourbon"; // bourbon files
 @import "grid_settings";  // some basic settings for the grid
 @import "neat/neat"; // neat files
-@import "reset"; // your custom resets
+@import "customreset"; // your custom resets
 @import "vars"; // your variables
 @import "structure"; // Put blocks and structure here
-@import "layout"; // The main styling
+@import "type"; // Typography file
 @import "helpers"; // generic helper classes
 
 /* WordPress Required Styles */

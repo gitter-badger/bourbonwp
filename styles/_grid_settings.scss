@@ -4,12 +4,12 @@
 $column: golden-ratio(1em, 3) !default; // Column width
 $gutter: golden-ratio(1em, 1) !default; // Gutter between each two columns
 $grid-columns: 1 !default; // Total number of columns in the grid
-$max-width: 100%; // Max-width of the outer container
+$max-width: em(1180); // Max-width of the outer container
 $border-box-sizing: true !default; // Makes all elements have a border-box layout
 $default-layout-direction: LTR !default;
 
 // Define your breakpoints. remember we want to code mobile first as it minimizes repetition.
 
 $small: new-breakpoint(min-width em(600)); // for tablets
-$large: new-breakpoint(min-width em(1080)); // for desktops and laptops
+$large: new-breakpoint(min-width em(1180)); // for desktops and laptops
 $huge: new-breakpoint(min-width em(1600)); // for large screens

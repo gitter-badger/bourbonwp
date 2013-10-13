@@ -1,4 +1,4 @@
-// Some styles to get you started.
+// Some styles to get you started. Building blocks go here.
 
 @for $i from 1 to 12 { // This one generates a loop outputting .span1, .span2, etc 
   .span#{$i} { 

@@ -76,11 +76,6 @@ add_theme_support( 'post-thumbnails' );
 // Deregister jQuery and use the version you need
 
 wp_deregister_script('jquery');
-if(!is_admin()) { 
-     wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js');
-     wp_enqueue_script('jquery');
-}
-
 
 
 // Register multiple menus

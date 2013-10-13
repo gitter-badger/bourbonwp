@@ -19,7 +19,7 @@
     <meta name="title" content="<?php wp_title('&laquo;', true, 'right'); ?> | <?php bloginfo('name'); ?>">
     <meta name="description" content="<h1><?php bloginfo('name'); ?></h1> | <?php bloginfo('description'); ?>">
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     
     <!-- Wordpress Templates require a style.css in theme root directory -->
@@ -30,7 +30,13 @@
     <!--[if (gte IE 6)&(lte IE 8)]>
     <script type="text/JavaScript" src="http://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
     <![endif]-->
-
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+    <![endif]-->
     <!-- Wordpress Head Items -->
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
@@ -42,17 +48,15 @@
     <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
   <![endif]-->
 
-    <div class="wrapper">
-        <div class="row">
-            <header class="span12">
-                <h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-                <p class="description"><?php bloginfo('description'); ?></p>
-            </header>
+    
+<header class="top">
+    <div class="row">
+        <div class="span5">
+            <h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+            <p class="description"><?php bloginfo('description'); ?></p>
         </div>
-        <div class="row">
-            <div class="navbar span12">
-                <div class="navbar-inner">
-                    <?php wp_nav_menu( array('theme_location' => 'primary', 'menu_class' => 'nav', 'container' => false )); ?>
-                </div>
-            </div>
-        </div>
+        <nav class="span7">
+            <?php wp_nav_menu( array('theme_location' => 'header', 'menu_class' => 'cf', 'container' => false )); ?>
+        </nav>
+    </div>
+</header>
