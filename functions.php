@@ -69,19 +69,22 @@ function versioned_resource($relative_url){
 }
 
 add_theme_support( 'post-thumbnails' ); 
-
 // add_image_size( 'medium-wide', 666, 238 ); //666x238
 
+// Deregister jQuery and use the version you need instead - script from http://css-tricks.com/snippets/wordpress/include-jquery-in-wordpress-theme/
 
-// Deregister jQuery and use the version you need
-
-wp_deregister_script('jquery');
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+function my_jquery_enqueue() {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", false, null);
+   wp_enqueue_script('jquery');
+}
 
 
 // Register multiple menus
 function register_my_menus(){
   register_nav_menus(array( 
-    'primary' => 'Main Nav',
+    'header' => 'Main Nav',
     'footer' => 'Footer Nav'
     )
   );
