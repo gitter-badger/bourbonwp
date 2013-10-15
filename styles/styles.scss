@@ -12,6 +12,7 @@ Neat: http://neat.bourbon.io and examples http://neat.bourbon.io/examples/
 @import "grid_settings";  // some basic settings for the grid
 @import "neat/neat"; // neat files - don't touch
 @import "customreset"; // your custom resets
+@import "mixins"; // your custom resets
 @import "vars"; // your variables
 @import "structure"; // Put blocks and structure here
 @import "type"; // Typography file
