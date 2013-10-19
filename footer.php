@@ -19,8 +19,9 @@
 
 <!--! end of #container -->
 
-<!-- Javascript at the bottom for fast page loading -->
 
+<!-- device.js 0.1.57 https://github.com/matthewhudson/device.js -->
+<?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/vendor/device.min.js") ?>
 <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/plugins.js") ?>
 <?php versioned_javascript($GLOBALS["TEMPLATE_RELATIVE_URL"]."js/main.js") ?>
    

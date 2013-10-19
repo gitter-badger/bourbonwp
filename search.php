@@ -8,36 +8,33 @@ get_header(); ?>
 
 <div class="row">
     <div class="span8">
-    <?php if (have_posts()) : ?>
+    
+        <section id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
 
-    <h2>Search Results</h2>
+            <?php if ( have_posts() ) : ?>
 
-    <?php get_template_part( 'paginate' ); ?>
+                <header class="page-header">
+                    <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'bourbonwp' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                </header><!-- .page-header -->
 
-    <?php while (have_posts()) : the_post(); ?>
+                <?php /* Start the Loop */ ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-        <article <?php post_class() ?>>
-            <h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-            <time><?php the_time('l, F jS, Y') ?></time>
+                    <?php get_template_part( 'content', 'search' ); ?>
 
-            <footer>
-                <?php the_tags('Tags: ', ', ', '<br />'); ?> 
-                Posted in <?php the_category(', ') ?>
-                | <?php edit_post_link('Edit', '', ' | '); ?>
-                <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
-            </footer>
-        </article>
+                <?php endwhile; ?>
 
-    <?php endwhile; ?>
+                <?php _s_content_nav( 'nav-below' ); ?>
 
-    <?php get_template_part( 'paginate' ); ?>
+            <?php else : ?>
 
-    <?php else : ?>
+                <?php get_template_part( 'no-results', 'search' ); ?>
 
-    <h2>No posts found. Try a different search?</h2>
-    <?php get_search_form(); ?>
+            <?php endif; ?>
 
-    <?php endif; ?>
+            </main><!-- #main -->
+        </section><!-- #primary -->
 
     </div>
     <div class="span4">

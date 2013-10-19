@@ -5,7 +5,7 @@
 </nav>
 <?php } else { ?>
 <nav>
-	<div><?php next_posts_link('&laquo; Older Entries') ?></div>
-	<div><?php previous_posts_link('Newer Entries &raquo;') ?></div>
+	<div><?php previous_posts_link('&laquo; Older Entries') ?></div>
+	<div><?php next_posts_link('Newer Entries &raquo;') ?></div>
 </nav>
 <?php } // end of is_single() ?>

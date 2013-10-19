@@ -1,10 +1,5 @@
-// Some useful variables
-
-var standalone = window.navigator.standalone,
-    userAgent = window.navigator.userAgent.toLowerCase(),
-    safari = /safari/.test( userAgent ),
-    ios = /iphone|ipod|ipad/.test( userAgent ),
-    windowWidth = $(window).width(), //retrieve current window width
+// Some useful variables (remember you can also use the helpers provided by device.js)
+var windowWidth = $(window).width(), //retrieve current window width
     windowHeight = $(window).height(), //retrieve current window height
     documentWidth = $(document).width(), //retrieve current document width
     documentHeight = $(document).height(), //retrieve current document height
@@ -18,5 +13,5 @@ $(".clickable-box").click(function(){
 });
 
 $(document).ready(function() {
-	// your scripts go here
+	
 });

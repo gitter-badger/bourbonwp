@@ -9,21 +9,17 @@ get_header(); ?>
 <div class="row">
     <div class="span8">
   
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <article class="post" id="post-<?php the_ID(); ?>">
-        <header>
-            <h2><?php the_title(); ?></h2>
-        </header>
-      
-        <?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-      
-    </article>
-    <?php endwhile; endif; ?>
-    <?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+            <?php get_template_part( 'content', 'page' ); ?>
 
-    <?php comments_template(); ?>
+            <?php
+                // If comments are open or we have at least one comment, load up the comment template
+                if ( comments_open() || '0' != get_comments_number() )
+                    comments_template();
+            ?>
+
+        <?php endwhile; // end of the loop. ?>
 
     </div>
     <div class="span4">

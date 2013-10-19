@@ -1,61 +1,64 @@
+<?php
+/**
+ *
+ * @package BourbonWP
+ */
+?>
 
-<?php if (is_single()) { ?> <!-- if page is single do the following -->
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <header class="entry-header">
+        <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-    <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-        <header>
-            <h2><?php the_title(); ?></a></h2>
-        </header>
-        <?php the_content('Read the rest of this entry &raquo;'); ?>
-        <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-        <?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
-        <footer>
-            <p>
-                This entry was posted by <?php the_author() ?>
-                on <time datetime="<?php the_time('Y-m-d')?>"><?php the_time('l, F jS, Y') ?></time>
-                at <time><?php the_time() ?></time>
-                and is filed under <?php the_category(', ') ?>.
-                You can follow any responses to this entry through the <?php post_comments_feed_link('RSS 2.0'); ?> feed.
+        <?php if ( 'post' == get_post_type() ) : ?>
+        <div class="entry-meta">
+            <?php _s_posted_on(); ?>
+        </div><!-- .entry-meta -->
+        <?php endif; ?>
+    </header><!-- .entry-header -->
 
-                <?php if ( comments_open() && pings_open() ) {
-                // Both Comments and Pings are open ?>
-                    You can <a href="#respond">leave a response</a>, or <a href="<?php trackback_url(); ?>" rel="trackback">trackback</a> from your own site.
+    <?php if ( is_search() ) : // Only display Excerpts for Search ?>
+    <div class="entry-summary">
+        <?php the_excerpt(); ?>
+    </div><!-- .entry-summary -->
+    <?php else : ?>
+    <div class="entry-content">
+        <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'bourbonwp' ) ); ?>
+        <?php
+            wp_link_pages( array(
+                'before' => '<div class="page-links">' . __( 'Pages:', 'bourbonwp' ),
+                'after'  => '</div>',
+            ) );
+        ?>
+    </div><!-- .entry-content -->
+    <?php endif; ?>
 
-                <?php } elseif ( !comments_open() && pings_open() ) {
-                // Only Pings are Open ?>
-                    Responses are currently closed, but you can <a href="<?php trackback_url(); ?> " rel="trackback">trackback</a> from your own site.
+    <footer class="entry-meta">
+        <?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
+            <?php
+                /* translators: used between list items, there is a space after the comma */
+                $categories_list = get_the_category_list( __( ', ', 'bourbonwp' ) );
+                if ( $categories_list && _s_categorized_blog() ) :
+            ?>
+            <span class="cat-links">
+                <?php printf( __( 'Posted in %1$s', 'bourbonwp' ), $categories_list ); ?>
+            </span>
+            <?php endif; // End if categories ?>
 
-                <?php } elseif ( comments_open() && !pings_open() ) {
-                // Comments are open, Pings are not ?>
-                    You can skip to the end and leave a response. Pinging is currently not allowed.
+            <?php
+                /* translators: used between list items, there is a space after the comma */
+                $tags_list = get_the_tag_list( '', __( ', ', 'bourbonwp' ) );
+                if ( $tags_list ) :
+            ?>
+            <span class="tags-links">
+                <?php printf( __( 'Tagged %1$s', 'bourbonwp' ), $tags_list ); ?>
+            </span>
+            <?php endif; // End if $tags_list ?>
+        <?php endif; // End if 'post' == get_post_type() ?>
 
-                <?php } elseif ( !comments_open() && !pings_open() ) {
-                // Neither Comments, nor Pings are open ?>
-                    Both comments and pings are currently closed.
+        <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+        <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'bourbonwp' ), __( '1 Comment', 'bourbonwp' ), __( '% Comments', 'bourbonwp' ) ); ?></span>
+        <?php endif; ?>
 
-                <?php } edit_post_link('Edit this entry','','.'); ?>
-            </p>
-        </footer>
-        <?php get_template_part( 'nav' ) ?>
-
-        <?php comments_template(); ?>
-
-    </article>
-
-<?php } else { // the following loop is used if we're not on a single page ?> 
-
-    <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-        <header>
-            <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-            <time datetime="<?php the_time('Y-m-d')?>"><?php the_time('F jS, Y') ?></time>
-            <span class="author">by <?php the_author() ?></span>
-        </header>
-        <?php the_content('Read the rest of this entry &raquo;'); ?>
-        <footer>
-            <?php the_tags('Tags: ', ', ', '<br />'); ?> 
-            Posted in <?php the_category(', ') ?>
-            | <?php edit_post_link('Edit', '', ' | '); ?>
-            <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
-        </footer>
-    </article>
-
-<?php } // end of is_single() ?>
+        <?php edit_post_link( __( 'Edit', 'bourbonwp' ), '<span class="edit-link">', '</span>' ); ?>
+    </footer><!-- .entry-meta -->
+</article><!-- #post-## -->
