@@ -1,6 +1,8 @@
 BourbonWP
 ===============================
 
+[![Join the chat at https://gitter.im/firmhouse/bourbonwp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/firmhouse/bourbonwp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A naked Wordpress theme with the convenience of having Bourbon and Neat already builtin.
 -------------------------------
 
